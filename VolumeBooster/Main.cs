@@ -1,11 +1,11 @@
 ﻿using System.Reflection;
 using HarmonyLib;
-using ModTemplate.MainPatch;
+using VolumeBooster.MainPatch;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityModManagerNet;
 
-namespace ModTemplate {
+namespace VolumeBooster {
     #if DEBUG
     [EnableReloading]
     #endif
@@ -15,15 +15,11 @@ namespace ModTemplate {
         internal static UnityModManager.ModEntry Mod;
         private static Harmony _harmony;
         internal static bool IsEnabled { get; private set; }
-        internal static MainSettings Settings { get; private set; }
 
         private static void Load(UnityModManager.ModEntry modEntry) {
             Mod = modEntry;
             Mod.OnToggle = OnToggle;
-            Settings = UnityModManager.ModSettings.Load<MainSettings>(modEntry);
-            Mod.OnGUI = Settings.OnGUI;
-            Mod.OnSaveGUI = Settings.OnSaveGUI;
-            
+
             #if DEBUG
             Mod.OnUnload = Stop;
             #endif
@@ -43,11 +39,6 @@ namespace ModTemplate {
         private static void Start() {
             _harmony = new Harmony(Mod.Info.Id);
             _harmony.PatchAll(Assembly.GetExecutingAssembly());
-            // GCS.speedTrialMode = true;
-            // SceneManager.LoadScene("XT-X");
-
-            // text = new GameObject().AddComponent<Text>();
-            // Object.DontDestroyOnLoad(text);
         }
 
         private static bool Stop(UnityModManager.ModEntry modEntry) {
@@ -55,9 +46,6 @@ namespace ModTemplate {
             #if RELEASE
             _harmony = null;
             #endif
-            
-            // Object.DestroyImmediate(text);
-            // text = null;
 
             return true;
         }

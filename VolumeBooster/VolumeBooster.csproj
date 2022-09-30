@@ -7,8 +7,8 @@
     <ProjectGuid>{E9351314-818F-4A65-870E-0CADE3A45CBF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ModTemplate</RootNamespace>
-    <AssemblyName>ModTemplate</AssemblyName>
+    <RootNamespace>VolumeBooster</RootNamespace>
+    <AssemblyName>VolumeBooster</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -387,7 +387,6 @@
     <Compile Include="Main.cs" />
     <Compile Include="MainPatch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="build.js" />

@@ -1,0 +1,9 @@
+{
+  "Id": "VolumeBooster",
+  "DisplayName": "VolumeBooster",
+  "Author": "HYONSU",
+  "Version": "0.0.1",
+  "AssemblyName": "VolumeBooster.dll",
+  "EntryMethod": "VolumeBooster.Main.Load",
+  "Repository": ""
+}
